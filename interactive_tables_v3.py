@@ -7,19 +7,8 @@ import dash_table.FormatTemplate as ft
 from dash_table.Format import Sign
 import dash_core_components as dcc
 # from Database.data_puller.Data import Factor, Data
-import datetime as dt
-import sys
-import os
+
 import numpy as np
-# sys.path.append('/home/cso/Desktop/gaurav/project/ARQ_Research/Database')
-
-
-# print(sys.path)
-
-# assert False
-
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 
 FILE_BASE = '/home/cso/Downloads/'
 
@@ -56,9 +45,6 @@ col_mapping = {'3Return': '3M Returns',
 
 app = dash.Dash(__name__)
 
-# app.css.config.serve_locally = True
-# app.scripts.config.serve_locally = True
-
 app.layout = html.Div([
     dash_table.DataTable(
         # id='datatable-filtering-fe',
@@ -69,12 +55,12 @@ app.layout = html.Div([
         # style_data={'whiteSpace':'normal'},
         columns=[
             {"name": 'Stock Name', "id": 'stock_name', "deletable": True},
-            {"name": 'ARQ Picks', "id": 'Strategy', "deletable": True},
+            {"name": 'My Picks', "id": 'Strategy', "deletable": True},
             {"name": 'Universe', "id": 'universe', "deletable": True},
             {"name": 'Catagory', "id": 'catagory', "deletable": True},
             {"name": 'Sector', "id": 'Sector', "deletable": True},
-            {"name": 'ARQ Rank', "id": 'ARQ Rank', "deletable": True},
-            {"name": 'Fundamental rank', "id": 'Fundamental_rank', "deletable": True},
+            {"name": 'My Rank', "id": 'My Rank', "deletable": True},
+            {"name": 'Intrinsic rank', "id": 'Intrinsic_rank', "deletable": True},
 
             {"name": 'Std. Above 150 DMA', "id": 'STD', "deletable": True, 'type': 'numeric', 'format': ft.Format(precision=2)},
 
